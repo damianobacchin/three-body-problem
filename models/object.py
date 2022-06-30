@@ -13,3 +13,10 @@ class Object:
             'y': vel[1],
             'z': vel[2]
         }
+    
+    def distance(self, obj):
+        return (
+            obj.pos['x'] - self.pos['x'],
+            obj.pos['y'] - self.pos['y'],
+            obj.pos['z'] - self.pos['z']
+        )

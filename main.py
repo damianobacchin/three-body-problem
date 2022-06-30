@@ -3,6 +3,15 @@ from models.object import Object
 from models.system import System
 
 
+def calc(system):
+    for elem in system.objects:
+        for pair in system.objects:
+            if (elem.id == pair.id):
+                continue
+            d = elem.distance(pair)
+            print(d)
+            
+
 if __name__ == '__main__':
     # Inizializing system
     system = System(name='Three Body Problem')
@@ -15,4 +24,4 @@ if __name__ == '__main__':
             vel=elem['vel-i']
         ))
 
-    print(system.objects)
+    calc(system)
